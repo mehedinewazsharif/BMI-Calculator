@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BMI Calculator</title>
+</head>
+<body>
+    Weight
+    <input type="text" id="weight" placeholder="weight">
+    Height
+    <input type="text" id="height" placeholder="height">
+    <button id="calculateBtn" >Calculate</button>
+    <br><br>
+    BMI Result:
+    <p id="result"></p> 
+
+
+<script>
+    let calculateBtn = document.querySelector("#calculateBtn");
+    calculateBtn = document.addEventListener("click",calculateBmi);
+    function calculateBmi() {
+        let Weight = document.getElementById('weight').value;
+        let Height = document.getElementById('height').value;
+        let heightSqu = Math.pow(parseFloat(Height),2);
+        let total = parseFloat(Weight)/heightSqu;
+        console.log(total);
+
+        document.getElementById("result").innerHTML=total;       
+    }
+   
+
+</script>
+
+
+</body>
+</html>
